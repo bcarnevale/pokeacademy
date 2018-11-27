@@ -10,21 +10,21 @@ body {
 }
 
 
-h1 {
-    text-align: center;
-    padding-right: 60%;
+#logo {
+    padding-left: 10%;
+    height: 100px;
 }
 
 #pokemon-list {
     text-align: center;
     padding-right: 60%;
-    height: 55vh;
+    height: 50vh;
     overflow-y: auto;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: #3c5aa6;
 }
 
 a:hover {

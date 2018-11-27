@@ -18,9 +18,12 @@ const pokemon = [
         id: 4,
         name: 'bulbazer'
     }
-]
+];
 
-// setting up routes
+// middleware allows access to the body of the file
+app.use(express.json());
+
+// Setting up routes
 
 // get request to '/' ie home
 app.get('/', (req, res) => {
@@ -44,6 +47,18 @@ app.get('/pokemon/:id', (req, res) => {
         return res.status(404).send('Pokemon not found :(' )
     }
     return res.send(poke);
+})
+
+app.post('/pokemon', (req, res) => {
+    // ADD A NEW POKEMON TO THE ARRAY
+    // 1. get params from req body
+    const id = req.body.id;
+    const name = req.body.name;
+    // 2. add to the array
+    const poke = {id: id, name: name};
+    pokemon.push(poke);
+    // 3. send new pokemon as response
+    return res.send(poke)
 })
 
 // app to listen to a specific port
