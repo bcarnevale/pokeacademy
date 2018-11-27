@@ -10,11 +10,11 @@ const renderAbilities = (poke) => {
 
 const renderMoves = (poke) => {
     const panel = document.querySelector('#poke-info');
-    const ol = `<ol id="moves"><b>Moves:</b></ol>`;
-    panel.insertAdjacentHTML('beforeend', ol);
-    const olElement = document.querySelector('#moves');
+    const ul = `<ul id="moves"><b>Moves:</b></ul>`;
+    panel.insertAdjacentHTML('beforeend', ul);
+    const ulElement = document.querySelector('#moves');
     poke.moves.forEach(move => {
-      olElement.insertAdjacentHTML('beforeend', `<li>${move.move.name}</li>`);
+      ulElement.insertAdjacentHTML('beforeend', `<li>${move.move.name}</li>`);
     });
 }
 
@@ -25,6 +25,7 @@ const renderPokemon = (poke) => {
     const pokeInfo = `
         <h1>${poke.name.toUpperCase()} #${poke.id}</h1>
         <img src ="${poke.sprites.front_default}"/>
+        <img src ="${poke.sprites.back_default}"/>
         <p>Weight: ${poke.weight} | Height: ${poke.height}</p>
     `;
     panel.insertAdjacentHTML('beforeend', pokeInfo);
